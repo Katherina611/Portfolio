@@ -1,0 +1,39 @@
+.links {
+  display: flex;
+  max-width: 1200px;
+  flex-direction: row;
+  justify-content: center; }
+  .links li {
+    list-style: none;
+    font-size: 20px;
+    flex-grow: 1;
+    text-align: center; }
+    .links li .indexLink {
+      text-decoration: none;
+      color: black; }
+
+body {
+  max-width: 1200px;
+  background-image: url("./../images/green.jpg");
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+a .images {
+  width: 200px;
+  height: 200px;
+  margin-left: 20px; }
+
+@media (max-width: 400px) {
+  .links {
+    display: flex;
+    max-width: 1200px;
+    flex-direction: column; }
+    .links li {
+      list-style: none;
+      font-size: 20px;
+      flex-grow: 1; }
+      .links li .indexLink {
+        text-decoration: none;
+        color: black; } }
+
+/*# sourceMappingURL=style.css.map */
