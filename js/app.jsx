@@ -34,29 +34,153 @@ document.addEventListener('DOMContentLoaded',function() {
             return (
                 <div>
                     <Menu/>
-                    <h1>O mnie</h1>
+                    <Profil/>
+                    <Education/>
+                    <Tools/>
+                    <Interest/>
                 </div>
             )
         }
     }
-    class Projects extends React.Component{
+    class Profil extends React.Component{
+        render(){
+            return (
+                <div className='paragraph'>
+                    <h1 className='header'>PROFIL</h1>
+                    <p className='profil'>
+                        Jestem absolwentką Akademii Górniczo-Hutniczej w Krakowie kierunku Inżynieria Środowiska.<br></br>
+                        W trakcie trwania studiów pojawiły się przedmioty związan z programowaniem, co też niezwykle mnie <br></br>
+                        zainteresowało i popchnęło mnie do zapisania się na kurs. Jestem osobą, która cały czas chce pogłębiać <br></br>
+                        swoją wiedzę i rozwijać się. Jestem przekonana, że branża IT pozwoli mi na rozwój i realizację ciekawych <br></br>
+                        oraz wymagających projektów.
+                    </p>
+                </div>
+            )
+        }
+    }
+    class Education extends React.Component{
+        render(){
+            return (
+                <div className='paragraph'>
+                    <h1 className='header'>WYKSZTAŁCENIE</h1>
+                    <div className='codersLab'>
+                        <img src='./../images/coders.png' className='codersImg'/>
+                        <h2 className='date'>
+                            2017 - 2018
+                        </h2>
+                        <p className='study'>
+                            Coders Lab – Szkoła programowania<br></br>
+                            Czas trwania: 320 godzin<br></br>
+                            Program: zaawansowany HTML i CSS, JavaScript, Sass, RWD, jQuery, ECMAScript6, React.js
+                        </p>
+                    </div>
+                    <div className='educationSection'>
+                        <img src='./../images/agh.png' className='aghImg'/>
+                        <h2 className='date'>
+                            2016 - 2017
+                        </h2>
+                        <p className='study'>
+                            Akademia Górniczo - Hutnicza im. Stanisława Staszica w Krakowie<br></br>
+                            Wydział Geodezji Górniczej i Inżynierii Środowiska<br></br>
+                            Kierunek: Inżynieria Środowiska, Studia Magisterskie
+                        </p>
+                    </div>
+                </div>
+            )
+        }
+    }
+    class Tools extends React.Component{
 
         render(){
-
-            const adressProjects=[
-                {name:'SIT ON CHAIR',img:'./../images/sit.png', url:'https://katherina611.github.io/Warsztat-HTML/'},
-                {name:'DESIGN YOUR HOME',img:'./../images/projekt_kocowy.png', url:'https://katherina611.github.io/Projekt-koncowy/#/'},
-                {name:'CALCULATOR',img:'./../images/kalkulator.png', url:'https://katherina611.github.io/Warsztat-Calculator/'}
+            const toolsImg=[
+                {img:'./../images/js.png', name:'JavaScript'},
+                {img:'./../images/react.png', name:'React.js'},
+                {img:'./../images/jQuery.png', name:'jQuery'},
+                {img:'./../images/html.png', name:'HTML'},
+                {img:'./../images/sass.svg', name:'SASS'},
+                {img:'./../images/css.png', name:'CSS'},
+                {img:'./../images/webpack.png', name:'Webpack'},
+                {img:'./../images/github.svg', name:'Github'},
+                {img:'./../images/autocad.png', name:'AutoCAD'},
             ];
-            const project=adressProjects.map((i,index)=>{
+            const tools=toolsImg.map((i,index)=>{
                 return (
-                    <div key={index}><a href={i.url}>{i.name}</a></div>
+                    <img src={i.img} key={index} className='toolsImg'/>
                 )
             });
             return (
+                <div className='paragraph'>
+                    <h1 className='header'>NARRZĘDZIA/TECHNOLOGIE</h1>
+                    <div className="toolsBox">
+                        {tools}
+                    </div>
+                </div>
+            )
+        }
+    }
+    class Interest extends React.Component{
+        render(){
+            const interestImg=[
+                {img:'./../images/f1.png'},
+                {img:'./../images/volley.png'},
+                {img:'./../images/football.svg'},
+                {img:'./../images/ski.png'},
+                {img:'./../images/dance.png'}
+            ];
+            const interest=interestImg.map((i,index)=>{
+                return (
+                    <img src={i.img} key={index} className='interestImg'/>
+                )
+            });
+            return(
+                <div className='paragraph'>
+                    <h1 className='header'>ZAINTERESOWANIA</h1>
+                    <div className="interestBox">
+                        {interest}
+                    </div>
+                </div>
+            )
+        }
+    }
+
+
+    class Projects extends React.Component{
+        state={
+            img1:'none',
+            img2:'none',
+            img3:'none'
+        };
+        handleMouseEnter=()=>{
+            this.setState({
+                img1:this.state.img1==='none'?'block':'none'
+            })
+        };
+
+        handleMouseEnter1=()=>{
+            this.setState({
+                img2:this.state.img2==='none'?'block':'none'
+            })
+        };
+
+        handleMouseEnter2=()=>{
+            this.setState({
+                img3:this.state.img3==='none'?'block':'none'
+            })
+        };
+
+        render(){
+
+            return (
                 <div>
                     <Menu/>
-                    <div className='projects'>{project}</div>
+                    <div className='projects'>
+                        <a href='https://katherina611.github.io/Warsztat-HTML/' onMouseEnter={this.handleMouseEnter} >SIT ON CHAIR</a>
+                        <img className='projectsImg' src='./../images/sit.png' style={{display:this.state.img1}}/>
+                        <a href='https://katherina611.github.io/Projekt-koncowy/' onMouseEnter={this.handleMouseEnter1}>DESIGN YOUR HOME</a>
+                        <img className='projectsImg' src='./../images/projekt_kocowy.png' style={{display:this.state.img2}}/>
+                        <a href='https://katherina611.github.io/Warsztat-Calculator/' onMouseEnter={this.handleMouseEnter2}>CALCULATOR</a>
+                        <img className='projectsImg' src='./../images/kalkulator.png' style={{display:this.state.img3}}/>
+                    </div>
                 </div>
             )
 

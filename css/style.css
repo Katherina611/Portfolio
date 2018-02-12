@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box; }
+
 @media (max-width: 400px) {
   .homePage {
     max-width: 1200px;
@@ -28,6 +31,69 @@
     background-repeat: no-repeat;
     background-size: cover; }
 
+  .paragraph {
+    margin-top: 70px; }
+    .paragraph .header {
+      display: flex;
+      justify-content: center;
+      font-size: 16px; }
+    .paragraph .profil {
+      text-align: center;
+      display: flex;
+      justify-content: center; }
+
+  .codersLab {
+    display: flex; }
+    .codersLab .codersImg {
+      margin-top: 50px;
+      margin-right: 20px;
+      width: 60px;
+      height: 60px; }
+    .codersLab .date {
+      font-size: 14px;
+      display: flex;
+      margin-top: 50px;
+      margin-right: 30px; }
+    .codersLab .study {
+      display: flex;
+      margin-top: 30px; }
+
+  .educationSection {
+    display: flex; }
+    .educationSection .aghImg {
+      margin-top: 50px;
+      margin-right: 30px;
+      width: 40px;
+      height: 60px; }
+    .educationSection .date {
+      font-size: 14px;
+      display: flex;
+      margin-top: 60px;
+      margin-right: 30px; }
+    .educationSection .study {
+      display: flex;
+      margin-top: 30px; }
+
+  .toolsBox {
+    display: flex;
+    flex-direction: column; }
+    .toolsBox .toolsImg {
+      width: 80px;
+      height: 80px;
+      margin: 20px;
+      margin-top: 50px;
+      margin-left: 150px; }
+
+  .interestBox {
+    display: flex;
+    flex-direction: column; }
+    .interestBox .interestImg {
+      width: 80px;
+      height: 80px;
+      margin: 20px;
+      margin-top: 50px;
+      margin-left: 150px; }
+
   /*
   .images {
     width: 200px;
@@ -36,6 +102,24 @@
     margin-top:150px;
   }
   */
+  .projects {
+    display: flex;
+    max-width: 1200px;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 100px;
+    font-size: 20px; }
+    .projects a {
+      color: black;
+      text-decoration: none;
+      margin: 50px 0; }
+    .projects .projectsImg {
+      width: 300px;
+      height: 200px;
+      justify-content: center;
+      opacity: 0.7;
+      margin-left: 30px; }
+
   .boxContact {
     display: flex;
     flex-direction: column; }
@@ -48,7 +132,9 @@
       position: relative; }
     .boxContact p {
       font-size: 18px;
-      display: block; } }
+      display: block;
+      width: 350px;
+      text-align: center; } }
 @media (min-width: 400px) {
   .homePage {
     max-width: 1200px;
@@ -81,9 +167,91 @@
     background-repeat: no-repeat;
     background-size: cover; }
 
+  .paragraph {
+    margin-top: 70px;
+    max-width: 1400px;
+    margin-left: 80px; }
+    .paragraph .header {
+      display: flex;
+      justify-content: center;
+      font-size: 16px; }
+    .paragraph .profil {
+      text-align: center;
+      display: flex;
+      justify-content: center; }
+
+  .codersLab {
+    display: flex;
+    margin-left: 190px; }
+    .codersLab .codersImg {
+      margin-top: 10px;
+      margin-right: 20px;
+      width: 80px;
+      height: 80px; }
+    .codersLab .date {
+      font-size: 14px;
+      display: flex;
+      margin-top: 50px;
+      margin-right: 30px; }
+    .codersLab .study {
+      display: flex;
+      margin-top: 30px; }
+
+  .educationSection {
+    display: flex;
+    margin-left: 200px; }
+    .educationSection .aghImg {
+      margin-right: 30px;
+      width: 60px;
+      height: 100px; }
+    .educationSection .date {
+      font-size: 14px;
+      display: flex;
+      margin-top: 50px;
+      margin-right: 30px; }
+    .educationSection .study {
+      display: flex;
+      margin-top: 30px; }
+
+  .toolsBox {
+    display: flex;
+    flex-direction: row; }
+    .toolsBox .toolsImg {
+      width: 80px;
+      height: 80px;
+      margin: 20px;
+      margin-top: 50px; }
+
+  .interestBox {
+    display: flex;
+    margin-left: 200px;
+    flex-direction: row; }
+    .interestBox .interestImg {
+      width: 80px;
+      height: 80px;
+      margin: 20px;
+      margin-top: 50px; }
+
   .images {
     width: 200px;
     height: 200px; }
+
+  .projects {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 100px;
+    font-size: 20px; }
+    .projects a {
+      color: black;
+      text-decoration: none;
+      margin: 50px 0; }
+    .projects .projectsImg {
+      width: 300px;
+      height: 200px;
+      justify-content: center;
+      margin-left: 450px;
+      opacity: 0.7; }
 
   .boxContact {
     display: flex; }
@@ -91,14 +259,14 @@
       width: 150px;
       height: 150px;
       flex-direction: row;
-      margin-top: 100px;
+      margin-top: 200px;
       margin-left: 90px;
       position: relative; }
     .boxContact p {
       font-size: 18px;
       display: block;
       position: absolute;
-      top: 320px;
+      top: 420px;
       width: 310px;
       text-align: center; } }
 
