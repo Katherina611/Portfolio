@@ -1,35 +1,16 @@
-.links{
-  display:flex;
-  max-width:1200px;
-  flex-direction: row;
-  justify-content:center;
-  li{
-    list-style: none;
-    font-size:20px;
-    flex-grow: 1;
-    text-align: center;
-    .indexLink{
-      text-decoration: none;
-      color:black;
+@media(max-width: 400px){
+  .homePage{
+    max-width:1200px;
+    height:600px;
+    display: flex;
+    .home{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      width:1200px;
     }
   }
-}
-body{
-  max-width: 1200px;
-  background-image: url("./../images/green.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-a{
-  .images{
-    width:200px;
-    height:200px;
-    margin-left: 20px;
-  }
-}
-
-
-@media(max-width: 400px){
   .links{
     display:flex;
     max-width:1200px;
@@ -44,4 +25,100 @@ a{
       }
     }
   }
+  body {
+    max-width: 1200px;
+    background-image: url("./../images/green.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  /*
+  .images {
+    width: 200px;
+    height: 200px;
+    margin-left: 150px;
+    margin-top:150px;
+  }
+  */
+  .boxContact{
+    display: flex;
+    flex-direction: column;
+    .imgContact{
+      width: 150px;
+      height: 150px;
+      flex-direction:row;
+      margin-top:100px;
+      margin-left: 100px;
+      position:relative;
+    }
+    p{
+      font-size: 18px;
+      display:block;
+    }
+  }
 }
+
+
+
+@media(min-width: 400px) {
+  .homePage{
+    max-width:1200px;
+    height:600px;
+    display: flex;
+    .home{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      width:1200px;
+    }
+  }
+  .links {
+    display: flex;
+    max-width: 1200px;
+    flex-direction: row;
+    justify-content: center;
+    li {
+      list-style: none;
+      font-size: 20px;
+      flex-grow: 1;
+      text-align: center;
+      .indexLink {
+        text-decoration: none;
+        color: black;
+      }
+    }
+  }
+  body {
+    max-width: 1200px;
+    background-image: url("./../images/green.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .images {
+    width: 200px;
+    height: 200px;
+  }
+
+
+  .boxContact{
+    display: flex;
+    .imgContact{
+      width: 150px;
+      height: 150px;
+      flex-direction:row;
+      margin-top:100px;
+      margin-left: 90px;
+      position:relative;
+    }
+    p{
+      font-size: 18px;
+      display:block;
+      position:absolute;
+      top:320px;
+      width:310px;
+      text-align: center;
+    }
+  }
+}
+

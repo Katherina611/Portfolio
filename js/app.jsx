@@ -20,9 +20,11 @@ document.addEventListener('DOMContentLoaded',function() {
     class Home extends React.Component{
         render(){
             return (
-                <div className='homePage'>
+                <div>
                     <Menu/>
-                    <h1>Strona główna</h1>
+                    <div className='homePage'>
+                        <h1 className='home'>Witam!</h1>
+                    </div>
                 </div>
             )
         }
@@ -32,38 +34,89 @@ document.addEventListener('DOMContentLoaded',function() {
             return (
                 <div>
                     <Menu/>
-                    <h1>O nnie</h1>
+                    <h1>O mnie</h1>
                 </div>
             )
         }
     }
     class Projects extends React.Component{
+
         render(){
-            return (
-                <div>
-                    <Menu/>
-                    <h1>Projekty</h1>
-                </div>
-            )
-        }
-    }
-    class Contact extends React.Component{
-        render(){
-            const images=[
-                {img:'./../images/github.svg', url:'https://github.com/Katherina611'},
-                {img:'./../images/linkedin.png', url:'https://www.linkedin.com/in/katarzyna-gacek-4a5685143/'},
-                {img:'./../images/fb.png', url:'https://web.facebook.com/kasia.gacek.33'}
+
+            const adressProjects=[
+                {name:'SIT ON CHAIR',img:'./../images/sit.png', url:'https://katherina611.github.io/Warsztat-HTML/'},
+                {name:'DESIGN YOUR HOME',img:'./../images/projekt_kocowy.png', url:'https://katherina611.github.io/Projekt-koncowy/#/'},
+                {name:'CALCULATOR',img:'./../images/kalkulator.png', url:'https://katherina611.github.io/Warsztat-Calculator/'}
             ];
-            const contacts=images.map((i,index)=>{
+            const project=adressProjects.map((i,index)=>{
                 return (
-                    <a href={i.url} key={index}><img className='images' key={index} src={i.img}/></a>
+                    <div key={index}><a href={i.url}>{i.name}</a></div>
                 )
             });
             return (
                 <div>
                     <Menu/>
-                    <div>
-                        {contacts}
+                    <div className='projects'>{project}</div>
+                </div>
+            )
+
+        }
+    }
+    class Contact extends React.Component{
+        state={
+            img:'block',
+            par:'none'
+        };
+        handleMouseEnter=()=>{
+            if(this.state.par==='none'){
+                this.setState({
+                    par:'block'
+                })
+            }
+        };
+
+        handleMouseLeave=()=>{
+            if(this.state.par==='block'){
+                this.setState({
+                    par:'none'
+                })
+            }
+        };
+
+        render(){
+
+            const imgTel=[
+                {img:'./../images/mobile.svg', data:'795 009 790'},
+                {img:'./../images/gmail.png', data:'katarzynag0609@gmail.com'}
+            ];
+            const images=[
+                {img:'./../images/github.svg', url:'https://github.com/Katherina611'},
+                {img:'./../images/linkedin.png', url:'https://www.linkedin.com/in/katarzyna-gacek-4a5685143/'},
+                {img:'./../images/fb.png', url:'https://web.facebook.com/kasia.gacek.33'},
+            ];
+
+            const social=images.map((i,index)=>{
+                return (
+                    <a href={i.url} key={index}>
+                        <img className='imgContact' key={index} src={i.img}/>
+                    </a>
+                )
+            });
+
+            const contact=imgTel.map((i,index)=>{
+                return (
+                    <div className='boxContact'>
+                        <img className='imgContact' key={index} src={i.img} style={{display:this.state.img}} onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave}/>
+                        <p style={{display:this.state.par}}>{i.data}</p>
+                    </div>
+                )
+            });
+            return (
+                <div>
+                    <Menu/>
+                    <div className='boxContact'>
+                        {social}
+                        {contact}
                     </div>
                 </div>
             )
