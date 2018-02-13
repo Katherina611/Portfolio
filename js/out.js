@@ -14279,7 +14279,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     _react2.default.createElement(
                         'div',
                         { className: 'codersLab' },
-                        _react2.default.createElement('img', { src: './../images/coders.png', className: 'codersImg' }),
+                        _react2.default.createElement('img', { src: 'images/coders.png', className: 'codersImg' }),
                         _react2.default.createElement(
                             'h2',
                             { className: 'date' },
@@ -14298,7 +14298,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     _react2.default.createElement(
                         'div',
                         { className: 'educationSection' },
-                        _react2.default.createElement('img', { src: './../images/agh.png', className: 'aghImg' }),
+                        _react2.default.createElement('img', { src: 'images/agh.png', className: 'aghImg' }),
                         _react2.default.createElement(
                             'h2',
                             { className: 'date' },
@@ -14333,7 +14333,7 @@ document.addEventListener('DOMContentLoaded', function () {
         _createClass(Tools, [{
             key: 'render',
             value: function render() {
-                var toolsImg = [{ img: './../images/js.png', name: 'JavaScript' }, { img: './../images/react.png', name: 'React.js' }, { img: './../images/jQuery.png', name: 'jQuery' }, { img: './../images/html.png', name: 'HTML' }, { img: './../images/sass.svg', name: 'SASS' }, { img: './../images/css.png', name: 'CSS' }, { img: './../images/webpack.png', name: 'Webpack' }, { img: './../images/github.svg', name: 'Github' }, { img: './../images/autocad.png', name: 'AutoCAD' }];
+                var toolsImg = [{ img: 'images/js.png', name: 'JavaScript' }, { img: 'images/react.png', name: 'React.js' }, { img: 'images/jQuery.png', name: 'jQuery' }, { img: 'images/html.png', name: 'HTML' }, { img: 'images/sass.svg', name: 'SASS' }, { img: 'images/css.png', name: 'CSS' }, { img: 'images/webpack.png', name: 'Webpack' }, { img: 'images/github.svg', name: 'Github' }, { img: 'images/autocad.png', name: 'AutoCAD' }];
                 var tools = toolsImg.map(function (i, index) {
                     return _react2.default.createElement('img', { src: i.img, key: index, className: 'toolsImg' });
                 });
@@ -14369,7 +14369,7 @@ document.addEventListener('DOMContentLoaded', function () {
         _createClass(Interest, [{
             key: 'render',
             value: function render() {
-                var interestImg = [{ img: './../images/f1.png' }, { img: './../images/volley.png' }, { img: './../images/football.svg' }, { img: './../images/ski.png' }, { img: './../images/dance.png' }];
+                var interestImg = [{ img: 'images/f1.png' }, { img: 'images/volley.png' }, { img: 'images/football.svg' }, { img: 'images/ski.png' }, { img: 'images/dance.png' }];
                 var interest = interestImg.map(function (i, index) {
                     return _react2.default.createElement('img', { src: i.img, key: index, className: 'interestImg' });
                 });
@@ -14442,19 +14442,19 @@ document.addEventListener('DOMContentLoaded', function () {
                             { href: 'https://katherina611.github.io/Warsztat-HTML/', onMouseEnter: this.handleMouseEnter },
                             'SIT ON CHAIR'
                         ),
-                        _react2.default.createElement('img', { className: 'projectsImg', src: './../images/sit.png', style: { display: this.state.img1 } }),
+                        _react2.default.createElement('img', { className: 'projectsImg', src: 'images/sit.png', style: { display: this.state.img1 } }),
                         _react2.default.createElement(
                             'a',
                             { href: 'https://katherina611.github.io/Projekt-koncowy/', onMouseEnter: this.handleMouseEnter1 },
                             'DESIGN YOUR HOME'
                         ),
-                        _react2.default.createElement('img', { className: 'projectsImg', src: './../images/projekt_kocowy.png', style: { display: this.state.img2 } }),
+                        _react2.default.createElement('img', { className: 'projectsImg', src: 'images/projekt_kocowy.png', style: { display: this.state.img2 } }),
                         _react2.default.createElement(
                             'a',
                             { href: 'https://katherina611.github.io/Warsztat-Calculator/', onMouseEnter: this.handleMouseEnter2 },
                             'CALCULATOR'
                         ),
-                        _react2.default.createElement('img', { className: 'projectsImg', src: './../images/kalkulator.png', style: { display: this.state.img3 } })
+                        _react2.default.createElement('img', { className: 'projectsImg', src: 'images/kalkulator.png', style: { display: this.state.img3 } })
                     )
                 );
             }
@@ -14500,8 +14500,8 @@ document.addEventListener('DOMContentLoaded', function () {
             value: function render() {
                 var _this10 = this;
 
-                var imgTel = [{ img: './../images/mobile.svg', data: '795 009 790' }, { img: './../images/gmail.png', data: 'katarzynag0609@gmail.com' }];
-                var images = [{ img: './../images/github.svg', url: 'https://github.com/Katherina611' }, { img: './../images/linkedin.png', url: 'https://www.linkedin.com/in/katarzyna-gacek-4a5685143/' }, { img: './../images/fb.png', url: 'https://web.facebook.com/kasia.gacek.33' }];
+                var imgTel = [{ img: 'images/mobile.svg', data: '795 009 790' }, { img: 'images/gmail.png', data: 'katarzynag0609@gmail.com' }];
+                var images = [{ img: 'images/github.svg', url: 'https://github.com/Katherina611' }, { img: 'images/linkedin.png', url: 'https://www.linkedin.com/in/katarzyna-gacek-4a5685143/' }, { img: 'images/fb.png', url: 'https://web.facebook.com/kasia.gacek.33' }];
 
                 var social = images.map(function (i, index) {
                     return _react2.default.createElement(
