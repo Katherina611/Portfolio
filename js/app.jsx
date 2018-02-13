@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded',function() {
                 <div className='paragraph'>
                     <h1 className='header'>WYKSZTAŁCENIE</h1>
                     <div className='codersLab'>
-                        <img src='images/coders.png' className='codersImg'/>
+                        <img src="images/coders.png" className='codersImg'/>
                         <h2 className='date'>
                             2017 - 2018
                         </h2>
@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded',function() {
                         </p>
                     </div>
                     <div className='educationSection'>
-                        <img src='images/agh.png' className='aghImg'/>
+                        <img src="images/agh.png" className='aghImg'/>
                         <h2 className='date'>
                             2016 - 2017
                         </h2>
@@ -93,19 +93,19 @@ document.addEventListener('DOMContentLoaded',function() {
 
         render(){
             const toolsImg=[
-                {img:'images/js.png', name:'JavaScript'},
-                {img:'images/react.png', name:'React.js'},
-                {img:'images/jQuery.png', name:'jQuery'},
-                {img:'images/html.png', name:'HTML'},
-                {img:'images/sass.svg', name:'SASS'},
-                {img:'images/css.png', name:'CSS'},
-                {img:'images/webpack.png', name:'Webpack'},
-                {img:'images/github.svg', name:'Github'},
-                {img:'images/autocad.png', name:'AutoCAD'},
+                {img:"images/js.png", name:'JavaScript'},
+                {img:"images/react.png", name:'React.js'},
+                {img:"images/jQuery.png", name:'jQuery'},
+                {img:"images/html.png", name:'HTML'},
+                {img:"images/sass.svg", name:'SASS'},
+                {img:"images/css.png", name:'CSS'},
+                {img:"images/webpack.png", name:'Webpack'},
+                {img:"images/github.svg", name:'Github'},
+                {img:"images/autocad.png", name:'AutoCAD'},
             ];
             const tools=toolsImg.map((i,index)=>{
                 return (
-                    <img src={i.img} key={index} className='toolsImg'/>
+                    <img src={i.img} key={index} className='toolsImg' title={i.name}/>
                 )
             });
             return (
@@ -121,15 +121,15 @@ document.addEventListener('DOMContentLoaded',function() {
     class Interest extends React.Component{
         render(){
             const interestImg=[
-                {img:'images/f1.png'},
-                {img:'images/volley.png'},
-                {img:'images/football.svg'},
-                {img:'images/ski.png'},
-                {img:'images/dance.png'}
+                {img:"images/f1.png", name:'f1'},
+                {img:"images/volley.png",name:'siatkówka'},
+                {img:"images/football.svg",name:'piłka nożna'},
+                {img:"images/ski.png",name:'skoki narciarskie'},
+                {img:"images/dance.png",name:'taniec towarzyski, współczesny'}
             ];
             const interest=interestImg.map((i,index)=>{
                 return (
-                    <img src={i.img} key={index} className='interestImg'/>
+                    <img src={i.img} key={index} className='interestImg' title={i.name}/>
                 )
             });
             return(
@@ -175,11 +175,11 @@ document.addEventListener('DOMContentLoaded',function() {
                     <Menu/>
                     <div className='projects'>
                         <a href='https://katherina611.github.io/Warsztat-HTML/' onMouseEnter={this.handleMouseEnter} >SIT ON CHAIR</a>
-                        <img className='projectsImg' src='images/sit.png' style={{display:this.state.img1}}/>
+                        <img className='projectsImg' src="images/sit.png" style={{display:this.state.img1}}/>
                         <a href='https://katherina611.github.io/Projekt-koncowy/' onMouseEnter={this.handleMouseEnter1}>DESIGN YOUR HOME</a>
-                        <img className='projectsImg' src='images/projekt_kocowy.png' style={{display:this.state.img2}}/>
+                        <img className='projectsImg' src="images/projekt_kocowy.png" style={{display:this.state.img2}}/>
                         <a href='https://katherina611.github.io/Warsztat-Calculator/' onMouseEnter={this.handleMouseEnter2}>CALCULATOR</a>
-                        <img className='projectsImg' src='images/kalkulator.png' style={{display:this.state.img3}}/>
+                        <img className='projectsImg' src="images/kalkulator.png" style={{display:this.state.img3}}/>
                     </div>
                 </div>
             )
@@ -210,19 +210,19 @@ document.addEventListener('DOMContentLoaded',function() {
         render(){
 
             const imgTel=[
-                {img:'images/mobile.svg', data:'795 009 790'},
-                {img:'images/gmail.png', data:'katarzynag0609@gmail.com'}
+                {img:"images/mobile.svg", data:'795 009 790', name:'telefon'},
+                {img:"images/gmail.png", data:'katarzynag0609@gmail.com', name:'email'}
             ];
             const images=[
-                {img:'images/github.svg', url:'https://github.com/Katherina611'},
-                {img:'images/linkedin.png', url:'https://www.linkedin.com/in/katarzyna-gacek-4a5685143/'},
-                {img:'images/fb.png', url:'https://web.facebook.com/kasia.gacek.33'},
+                {img:"images/github.svg", url:'https://github.com/Katherina611', name:'github'},
+                {img:"images/linkedin.png", url:'https://www.linkedin.com/in/katarzyna-gacek-4a5685143/', name:'linkedin'},
+                {img:"images/fb.png", url:'https://web.facebook.com/kasia.gacek.33', name:'facebook'},
             ];
 
             const social=images.map((i,index)=>{
                 return (
                     <a href={i.url} key={index}>
-                        <img className='imgContact' key={index} src={i.img}/>
+                        <img className='imgContact' key={index} src={i.img} title={i.name}/>
                     </a>
                 )
             });
@@ -230,7 +230,7 @@ document.addEventListener('DOMContentLoaded',function() {
             const contact=imgTel.map((i,index)=>{
                 return (
                     <div className='boxContact'>
-                        <img className='imgContact' key={index} src={i.img} style={{display:this.state.img}} onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave}/>
+                        <img className='imgContact' key={index} src={i.img} title={i.name} style={{display:this.state.img}} onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave}/>
                         <p style={{display:this.state.par}}>{i.data}</p>
                     </div>
                 )

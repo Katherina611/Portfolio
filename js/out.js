@@ -14333,9 +14333,9 @@ document.addEventListener('DOMContentLoaded', function () {
         _createClass(Tools, [{
             key: 'render',
             value: function render() {
-                var toolsImg = [{ img: 'images/js.png', name: 'JavaScript' }, { img: 'images/react.png', name: 'React.js' }, { img: 'images/jQuery.png', name: 'jQuery' }, { img: 'images/html.png', name: 'HTML' }, { img: 'images/sass.svg', name: 'SASS' }, { img: 'images/css.png', name: 'CSS' }, { img: 'images/webpack.png', name: 'Webpack' }, { img: 'images/github.svg', name: 'Github' }, { img: 'images/autocad.png', name: 'AutoCAD' }];
+                var toolsImg = [{ img: "images/js.png", name: 'JavaScript' }, { img: "images/react.png", name: 'React.js' }, { img: "images/jQuery.png", name: 'jQuery' }, { img: "images/html.png", name: 'HTML' }, { img: "images/sass.svg", name: 'SASS' }, { img: "images/css.png", name: 'CSS' }, { img: "images/webpack.png", name: 'Webpack' }, { img: "images/github.svg", name: 'Github' }, { img: "images/autocad.png", name: 'AutoCAD' }];
                 var tools = toolsImg.map(function (i, index) {
-                    return _react2.default.createElement('img', { src: i.img, key: index, className: 'toolsImg' });
+                    return _react2.default.createElement('img', { src: i.img, key: index, className: 'toolsImg', title: i.name });
                 });
                 return _react2.default.createElement(
                     'div',
@@ -14369,9 +14369,9 @@ document.addEventListener('DOMContentLoaded', function () {
         _createClass(Interest, [{
             key: 'render',
             value: function render() {
-                var interestImg = [{ img: 'images/f1.png' }, { img: 'images/volley.png' }, { img: 'images/football.svg' }, { img: 'images/ski.png' }, { img: 'images/dance.png' }];
+                var interestImg = [{ img: "images/f1.png", name: 'f1' }, { img: "images/volley.png", name: 'siatkówka' }, { img: "images/football.svg", name: 'piłka nożna' }, { img: "images/ski.png", name: 'skoki narciarskie' }, { img: "images/dance.png", name: 'taniec towarzyski, współczesny' }];
                 var interest = interestImg.map(function (i, index) {
-                    return _react2.default.createElement('img', { src: i.img, key: index, className: 'interestImg' });
+                    return _react2.default.createElement('img', { src: i.img, key: index, className: 'interestImg', title: i.name });
                 });
                 return _react2.default.createElement(
                     'div',
@@ -14500,14 +14500,14 @@ document.addEventListener('DOMContentLoaded', function () {
             value: function render() {
                 var _this10 = this;
 
-                var imgTel = [{ img: 'images/mobile.svg', data: '795 009 790' }, { img: 'images/gmail.png', data: 'katarzynag0609@gmail.com' }];
-                var images = [{ img: 'images/github.svg', url: 'https://github.com/Katherina611' }, { img: 'images/linkedin.png', url: 'https://www.linkedin.com/in/katarzyna-gacek-4a5685143/' }, { img: 'images/fb.png', url: 'https://web.facebook.com/kasia.gacek.33' }];
+                var imgTel = [{ img: "images/mobile.svg", data: '795 009 790', name: 'telefon' }, { img: "images/gmail.png", data: 'katarzynag0609@gmail.com', name: 'email' }];
+                var images = [{ img: "images/github.svg", url: 'https://github.com/Katherina611', name: 'github' }, { img: "images/linkedin.png", url: 'https://www.linkedin.com/in/katarzyna-gacek-4a5685143/', name: 'linkedin' }, { img: "images/fb.png", url: 'https://web.facebook.com/kasia.gacek.33', name: 'facebook' }];
 
                 var social = images.map(function (i, index) {
                     return _react2.default.createElement(
                         'a',
                         { href: i.url, key: index },
-                        _react2.default.createElement('img', { className: 'imgContact', key: index, src: i.img })
+                        _react2.default.createElement('img', { className: 'imgContact', key: index, src: i.img, title: i.name })
                     );
                 });
 
@@ -14515,7 +14515,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     return _react2.default.createElement(
                         'div',
                         { className: 'boxContact' },
-                        _react2.default.createElement('img', { className: 'imgContact', key: index, src: i.img, style: { display: _this10.state.img }, onMouseEnter: _this10.handleMouseEnter, onMouseLeave: _this10.handleMouseLeave }),
+                        _react2.default.createElement('img', { className: 'imgContact', key: index, src: i.img, title: i.name, style: { display: _this10.state.img }, onMouseEnter: _this10.handleMouseEnter, onMouseLeave: _this10.handleMouseLeave }),
                         _react2.default.createElement(
                             'p',
                             { style: { display: _this10.state.par } },
