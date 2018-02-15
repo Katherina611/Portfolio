@@ -14161,28 +14161,62 @@ document.addEventListener('DOMContentLoaded', function () {
         _inherits(Home, _React$Component2);
 
         function Home() {
+            var _ref;
+
+            var _temp, _this2, _ret;
+
             _classCallCheck(this, Home);
 
-            return _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).apply(this, arguments));
+            for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+                args[_key] = arguments[_key];
+            }
+
+            return _ret = (_temp = (_this2 = _possibleConstructorReturn(this, (_ref = Home.__proto__ || Object.getPrototypeOf(Home)).call.apply(_ref, [this].concat(args))), _this2), _this2.state = {
+                loader: true
+            }, _temp), _possibleConstructorReturn(_this2, _ret);
         }
 
         _createClass(Home, [{
+            key: 'componentDidMount',
+            value: function componentDidMount() {
+                var _this3 = this;
+
+                this.timeout = setTimeout(function () {
+                    _this3.setState({
+                        loader: false
+                    });
+                }, 4000);
+            }
+        }, {
+            key: 'componentWillUnmount',
+            value: function componentWillUnmount() {
+                clearTimeout(this.timeout);
+            }
+        }, {
             key: 'render',
             value: function render() {
-                return _react2.default.createElement(
-                    'div',
-                    null,
-                    _react2.default.createElement(Menu, null),
-                    _react2.default.createElement(
+                if (this.state.loader) {
+                    return _react2.default.createElement(
                         'div',
-                        { className: 'homePage' },
+                        { id: 'preloader' },
+                        _react2.default.createElement('div', { id: 'loader' })
+                    );
+                } else {
+                    return _react2.default.createElement(
+                        'div',
+                        null,
+                        _react2.default.createElement(Menu, null),
                         _react2.default.createElement(
-                            'h1',
-                            { className: 'home' },
-                            'Witam!'
+                            'div',
+                            { className: 'homePage' },
+                            _react2.default.createElement(
+                                'h1',
+                                { className: 'home' },
+                                'Witam!'
+                            )
                         )
-                    )
-                );
+                    );
+                }
             }
         }]);
 
@@ -14397,33 +14431,33 @@ document.addEventListener('DOMContentLoaded', function () {
         _inherits(Projects, _React$Component8);
 
         function Projects() {
-            var _ref;
+            var _ref2;
 
-            var _temp, _this8, _ret;
+            var _temp2, _this9, _ret2;
 
             _classCallCheck(this, Projects);
 
-            for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-                args[_key] = arguments[_key];
+            for (var _len2 = arguments.length, args = Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
+                args[_key2] = arguments[_key2];
             }
 
-            return _ret = (_temp = (_this8 = _possibleConstructorReturn(this, (_ref = Projects.__proto__ || Object.getPrototypeOf(Projects)).call.apply(_ref, [this].concat(args))), _this8), _this8.state = {
+            return _ret2 = (_temp2 = (_this9 = _possibleConstructorReturn(this, (_ref2 = Projects.__proto__ || Object.getPrototypeOf(Projects)).call.apply(_ref2, [this].concat(args))), _this9), _this9.state = {
                 img1: 'none',
                 img2: 'none',
                 img3: 'none'
-            }, _this8.handleMouseEnter = function () {
-                _this8.setState({
-                    img1: _this8.state.img1 === 'none' ? 'block' : 'none'
+            }, _this9.handleMouseEnter = function () {
+                _this9.setState({
+                    img1: _this9.state.img1 === 'none' ? 'block' : 'none'
                 });
-            }, _this8.handleMouseEnter1 = function () {
-                _this8.setState({
-                    img2: _this8.state.img2 === 'none' ? 'block' : 'none'
+            }, _this9.handleMouseEnter1 = function () {
+                _this9.setState({
+                    img2: _this9.state.img2 === 'none' ? 'block' : 'none'
                 });
-            }, _this8.handleMouseEnter2 = function () {
-                _this8.setState({
-                    img3: _this8.state.img3 === 'none' ? 'block' : 'none'
+            }, _this9.handleMouseEnter2 = function () {
+                _this9.setState({
+                    img3: _this9.state.img3 === 'none' ? 'block' : 'none'
                 });
-            }, _temp), _possibleConstructorReturn(_this8, _ret);
+            }, _temp2), _possibleConstructorReturn(_this9, _ret2);
         }
 
         _createClass(Projects, [{
@@ -14467,38 +14501,38 @@ document.addEventListener('DOMContentLoaded', function () {
         _inherits(Contact, _React$Component9);
 
         function Contact() {
-            var _ref2;
+            var _ref3;
 
-            var _temp2, _this9, _ret2;
+            var _temp3, _this10, _ret3;
 
             _classCallCheck(this, Contact);
 
-            for (var _len2 = arguments.length, args = Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
-                args[_key2] = arguments[_key2];
+            for (var _len3 = arguments.length, args = Array(_len3), _key3 = 0; _key3 < _len3; _key3++) {
+                args[_key3] = arguments[_key3];
             }
 
-            return _ret2 = (_temp2 = (_this9 = _possibleConstructorReturn(this, (_ref2 = Contact.__proto__ || Object.getPrototypeOf(Contact)).call.apply(_ref2, [this].concat(args))), _this9), _this9.state = {
+            return _ret3 = (_temp3 = (_this10 = _possibleConstructorReturn(this, (_ref3 = Contact.__proto__ || Object.getPrototypeOf(Contact)).call.apply(_ref3, [this].concat(args))), _this10), _this10.state = {
                 img: 'block',
                 par: 'none'
-            }, _this9.handleMouseEnter = function () {
-                if (_this9.state.par === 'none') {
-                    _this9.setState({
+            }, _this10.handleMouseEnter = function () {
+                if (_this10.state.par === 'none') {
+                    _this10.setState({
                         par: 'block'
                     });
                 }
-            }, _this9.handleMouseLeave = function () {
-                if (_this9.state.par === 'block') {
-                    _this9.setState({
+            }, _this10.handleMouseLeave = function () {
+                if (_this10.state.par === 'block') {
+                    _this10.setState({
                         par: 'none'
                     });
                 }
-            }, _temp2), _possibleConstructorReturn(_this9, _ret2);
+            }, _temp3), _possibleConstructorReturn(_this10, _ret3);
         }
 
         _createClass(Contact, [{
             key: 'render',
             value: function render() {
-                var _this10 = this;
+                var _this11 = this;
 
                 var imgTel = [{ img: "images/mobile.svg", data: '795 009 790', name: 'telefon' }, { img: "images/gmail.png", data: 'katarzynag0609@gmail.com', name: 'email' }];
                 var images = [{ img: "images/github.svg", url: 'https://github.com/Katherina611', name: 'github' }, { img: "images/linkedin.png", url: 'https://www.linkedin.com/in/katarzyna-gacek-4a5685143/', name: 'linkedin' }, { img: "images/fb.png", url: 'https://web.facebook.com/kasia.gacek.33', name: 'facebook' }];
@@ -14515,10 +14549,10 @@ document.addEventListener('DOMContentLoaded', function () {
                     return _react2.default.createElement(
                         'div',
                         { className: 'boxContact' },
-                        _react2.default.createElement('img', { className: 'imgContact', key: index, src: i.img, title: i.name, style: { display: _this10.state.img }, onMouseEnter: _this10.handleMouseEnter, onMouseLeave: _this10.handleMouseLeave }),
+                        _react2.default.createElement('img', { className: 'imgContact', key: index, src: i.img, title: i.name, style: { display: _this11.state.img }, onMouseEnter: _this11.handleMouseEnter, onMouseLeave: _this11.handleMouseLeave }),
                         _react2.default.createElement(
                             'p',
-                            { style: { display: _this10.state.par } },
+                            { style: { display: _this11.state.par } },
                             i.data
                         )
                     );
@@ -25715,7 +25749,7 @@ exports = module.exports = __webpack_require__(221)(false);
 
 
 // module
-exports.push([module.i, "* {\n  box-sizing: border-box; }\n\n@media (max-width: 400px) {\n  .homePage {\n    max-width: 1200px;\n    height: 600px;\n    display: flex; }\n    .homePage .home {\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      text-align: center;\n      width: 1200px; }\n  .links {\n    display: flex;\n    max-width: 1200px;\n    flex-direction: column; }\n    .links li {\n      list-style: none;\n      font-size: 20px;\n      flex-grow: 1; }\n      .links li .indexLink {\n        text-decoration: none;\n        color: black; }\n  body {\n    max-width: 1200px;\n    background-image: url(" + escape(__webpack_require__(104)) + ");\n    background-repeat: no-repeat;\n    background-size: cover; }\n  .paragraph {\n    margin-top: 70px; }\n    .paragraph .header {\n      display: flex;\n      justify-content: center;\n      font-size: 16px; }\n    .paragraph .profil {\n      text-align: center;\n      display: flex;\n      justify-content: center; }\n  .codersLab {\n    display: flex; }\n    .codersLab .codersImg {\n      margin-top: 50px;\n      margin-right: 20px;\n      width: 60px;\n      height: 60px; }\n    .codersLab .date {\n      font-size: 14px;\n      display: flex;\n      margin-top: 50px;\n      margin-right: 30px; }\n    .codersLab .study {\n      display: flex;\n      margin-top: 30px; }\n  .educationSection {\n    display: flex; }\n    .educationSection .aghImg {\n      margin-top: 50px;\n      margin-right: 30px;\n      width: 40px;\n      height: 60px; }\n    .educationSection .date {\n      font-size: 14px;\n      display: flex;\n      margin-top: 60px;\n      margin-right: 30px; }\n    .educationSection .study {\n      display: flex;\n      margin-top: 30px; }\n  .toolsBox {\n    display: flex;\n    flex-direction: column; }\n    .toolsBox .toolsImg {\n      width: 80px;\n      height: 80px;\n      margin: 20px;\n      margin-top: 50px;\n      margin-left: 150px; }\n  .interestBox {\n    display: flex;\n    flex-direction: column; }\n    .interestBox .interestImg {\n      width: 80px;\n      height: 80px;\n      margin: 20px;\n      margin-top: 50px;\n      margin-left: 150px; }\n  /*\n  .images {\n    width: 200px;\n    height: 200px;\n    margin-left: 150px;\n    margin-top:150px;\n  }\n  */\n  .projects {\n    display: flex;\n    max-width: 1200px;\n    flex-direction: column;\n    text-align: center;\n    margin-top: 100px;\n    font-size: 20px; }\n    .projects a {\n      color: black;\n      text-decoration: none;\n      margin: 50px 0; }\n    .projects .projectsImg {\n      width: 300px;\n      height: 200px;\n      justify-content: center;\n      opacity: 0.7;\n      margin-left: 30px; }\n  .boxContact {\n    display: flex;\n    flex-direction: column; }\n    .boxContact .imgContact {\n      width: 150px;\n      height: 150px;\n      flex-direction: row;\n      margin-top: 100px;\n      margin-left: 100px;\n      position: relative; }\n    .boxContact p {\n      font-size: 18px;\n      display: block;\n      width: 350px;\n      text-align: center; } }\n\n@media (min-width: 400px) {\n  .homePage {\n    max-width: 1200px;\n    height: 600px;\n    display: flex; }\n    .homePage .home {\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      text-align: center;\n      width: 1200px; }\n  .links {\n    display: flex;\n    max-width: 1200px;\n    flex-direction: row;\n    justify-content: center; }\n    .links li {\n      list-style: none;\n      font-size: 20px;\n      flex-grow: 1;\n      text-align: center; }\n      .links li .indexLink {\n        text-decoration: none;\n        color: black; }\n  body {\n    max-width: 1200px;\n    background-image: url(" + escape(__webpack_require__(104)) + ");\n    background-repeat: no-repeat;\n    background-size: cover; }\n  .paragraph {\n    margin-top: 70px;\n    max-width: 1400px;\n    margin-left: 80px; }\n    .paragraph .header {\n      display: flex;\n      justify-content: center;\n      font-size: 16px; }\n    .paragraph .profil {\n      text-align: center;\n      display: flex;\n      justify-content: center; }\n  .codersLab {\n    display: flex;\n    margin-left: 190px; }\n    .codersLab .codersImg {\n      margin-top: 10px;\n      margin-right: 20px;\n      width: 80px;\n      height: 80px; }\n    .codersLab .date {\n      font-size: 14px;\n      display: flex;\n      margin-top: 50px;\n      margin-right: 30px; }\n    .codersLab .study {\n      display: flex;\n      margin-top: 30px; }\n  .educationSection {\n    display: flex;\n    margin-left: 200px; }\n    .educationSection .aghImg {\n      margin-right: 30px;\n      width: 60px;\n      height: 100px; }\n    .educationSection .date {\n      font-size: 14px;\n      display: flex;\n      margin-top: 50px;\n      margin-right: 30px; }\n    .educationSection .study {\n      display: flex;\n      margin-top: 30px; }\n  .toolsBox {\n    display: flex;\n    flex-direction: row; }\n    .toolsBox .toolsImg {\n      width: 80px;\n      height: 80px;\n      margin: 20px;\n      margin-top: 50px; }\n  .interestBox {\n    display: flex;\n    margin-left: 200px;\n    flex-direction: row; }\n    .interestBox .interestImg {\n      width: 80px;\n      height: 80px;\n      margin: 20px;\n      margin-top: 50px; }\n  .images {\n    width: 200px;\n    height: 200px; }\n  .projects {\n    display: flex;\n    flex-direction: column;\n    text-align: center;\n    margin-top: 100px;\n    font-size: 20px; }\n    .projects a {\n      color: black;\n      text-decoration: none;\n      margin: 50px 0; }\n    .projects .projectsImg {\n      width: 300px;\n      height: 200px;\n      justify-content: center;\n      margin-left: 450px;\n      opacity: 0.7; }\n  .boxContact {\n    display: flex; }\n    .boxContact .imgContact {\n      width: 150px;\n      height: 150px;\n      flex-direction: row;\n      margin-top: 200px;\n      margin-left: 90px;\n      position: relative; }\n    .boxContact p {\n      font-size: 18px;\n      display: block;\n      position: absolute;\n      top: 420px;\n      width: 310px;\n      text-align: center; } }\n", ""]);
+exports.push([module.i, "* {\n  box-sizing: border-box; }\n\n@media (max-width: 400px) {\n  #preloader {\n    position: fixed;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%; }\n  #loader {\n    display: block;\n    position: relative;\n    left: 50%;\n    top: 50%;\n    width: 150px;\n    height: 150px;\n    margin: -75px 0 0 -75px;\n    border-radius: 50%;\n    border: 3px solid transparent;\n    border-top-color: black;\n    -webkit-animation: spin 2s linear infinite;\n    animation: spin 2s linear infinite; }\n  #loader:before {\n    content: \"\";\n    position: absolute;\n    top: 5px;\n    left: 5px;\n    right: 5px;\n    bottom: 5px;\n    border-radius: 50%;\n    border: 3px solid transparent;\n    border-top-color: black;\n    -webkit-animation: spin 3s linear infinite;\n    animation: spin 3s linear infinite; }\n  #loader:after {\n    content: \"\";\n    position: absolute;\n    top: 15px;\n    left: 15px;\n    right: 15px;\n    bottom: 15px;\n    border-radius: 50%;\n    border: 3px solid transparent;\n    border-top-color: black;\n    -webkit-animation: spin 1.5s linear infinite;\n    animation: spin 1.5s linear infinite; }\n  @-webkit-keyframes spin {\n    0% {\n      -webkit-transform: rotate(0deg);\n      -ms-transform: rotate(0deg);\n      transform: rotate(0deg); }\n    100% {\n      -webkit-transform: rotate(360deg);\n      -ms-transform: rotate(360deg);\n      transform: rotate(360deg); } }\n  @keyframes spin {\n    0% {\n      -webkit-transform: rotate(0deg);\n      -ms-transform: rotate(0deg);\n      transform: rotate(0deg); }\n    100% {\n      -webkit-transform: rotate(360deg);\n      -ms-transform: rotate(360deg);\n      transform: rotate(360deg); } }\n  .homePage {\n    max-width: 1200px;\n    height: 600px;\n    display: flex; }\n    .homePage .home {\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      text-align: center;\n      width: 1200px; }\n  .links {\n    display: flex;\n    max-width: 1200px;\n    flex-direction: column; }\n    .links li {\n      list-style: none;\n      font-size: 20px;\n      flex-grow: 1; }\n      .links li .indexLink {\n        text-decoration: none;\n        color: black; }\n  body {\n    max-width: 1200px;\n    background-image: url(" + escape(__webpack_require__(104)) + ");\n    background-repeat: no-repeat;\n    background-size: cover; }\n  .paragraph {\n    margin-top: 70px; }\n    .paragraph .header {\n      display: flex;\n      justify-content: center;\n      font-size: 16px; }\n    .paragraph .profil {\n      text-align: center;\n      display: flex;\n      justify-content: center; }\n  .codersLab {\n    display: flex; }\n    .codersLab .codersImg {\n      margin-top: 50px;\n      margin-right: 20px;\n      width: 60px;\n      height: 60px; }\n    .codersLab .date {\n      font-size: 14px;\n      display: flex;\n      margin-top: 50px;\n      margin-right: 30px; }\n    .codersLab .study {\n      display: flex;\n      margin-top: 30px; }\n  .educationSection {\n    display: flex; }\n    .educationSection .aghImg {\n      margin-top: 50px;\n      margin-right: 30px;\n      width: 40px;\n      height: 60px; }\n    .educationSection .date {\n      font-size: 14px;\n      display: flex;\n      margin-top: 60px;\n      margin-right: 30px; }\n    .educationSection .study {\n      display: flex;\n      margin-top: 30px; }\n  .toolsBox {\n    display: flex;\n    flex-direction: column; }\n    .toolsBox .toolsImg {\n      width: 80px;\n      height: 80px;\n      margin: 20px;\n      margin-top: 50px;\n      margin-left: 150px; }\n  .interestBox {\n    display: flex;\n    flex-direction: column; }\n    .interestBox .interestImg {\n      width: 80px;\n      height: 80px;\n      margin: 20px;\n      margin-top: 50px;\n      margin-left: 150px; }\n  /*\n  .images {\n    width: 200px;\n    height: 200px;\n    margin-left: 150px;\n    margin-top:150px;\n  }\n  */\n  .projects {\n    display: flex;\n    max-width: 1200px;\n    flex-direction: column;\n    text-align: center;\n    margin-top: 100px;\n    font-size: 20px; }\n    .projects a {\n      color: black;\n      text-decoration: none;\n      margin: 50px 0; }\n    .projects .projectsImg {\n      width: 300px;\n      height: 200px;\n      justify-content: center;\n      opacity: 0.7;\n      margin-left: 30px; }\n  .boxContact {\n    display: flex;\n    flex-direction: column; }\n    .boxContact .imgContact {\n      width: 150px;\n      height: 150px;\n      flex-direction: row;\n      margin-top: 100px;\n      margin-left: 100px;\n      position: relative; }\n    .boxContact p {\n      font-size: 18px;\n      display: block;\n      width: 350px;\n      text-align: center; } }\n\n@media (min-width: 400px) {\n  body {\n    background-color: #222; }\n  #preloader {\n    position: fixed;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%; }\n  #loader {\n    display: block;\n    position: relative;\n    left: 50%;\n    top: 50%;\n    width: 150px;\n    height: 150px;\n    margin: -75px 0 0 -75px;\n    border-radius: 50%;\n    border: 3px solid transparent;\n    border-top-color: black;\n    -webkit-animation: spin 2s linear infinite;\n    animation: spin 2s linear infinite; }\n  #loader:before {\n    content: \"\";\n    position: absolute;\n    top: 5px;\n    left: 5px;\n    right: 5px;\n    bottom: 5px;\n    border-radius: 50%;\n    border: 3px solid transparent;\n    border-top-color: black;\n    -webkit-animation: spin 3s linear infinite;\n    animation: spin 3s linear infinite; }\n  #loader:after {\n    content: \"\";\n    position: absolute;\n    top: 15px;\n    left: 15px;\n    right: 15px;\n    bottom: 15px;\n    border-radius: 50%;\n    border: 3px solid transparent;\n    border-top-color: black;\n    -webkit-animation: spin 1.5s linear infinite;\n    animation: spin 1.5s linear infinite; }\n  @-webkit-keyframes spin {\n    0% {\n      -webkit-transform: rotate(0deg);\n      -ms-transform: rotate(0deg);\n      transform: rotate(0deg); }\n    100% {\n      -webkit-transform: rotate(360deg);\n      -ms-transform: rotate(360deg);\n      transform: rotate(360deg); } }\n  @keyframes spin {\n    0% {\n      -webkit-transform: rotate(0deg);\n      -ms-transform: rotate(0deg);\n      transform: rotate(0deg); }\n    100% {\n      -webkit-transform: rotate(360deg);\n      -ms-transform: rotate(360deg);\n      transform: rotate(360deg); } }\n  .homePage {\n    max-width: 1200px;\n    height: 600px;\n    display: flex; }\n    .homePage .home {\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      text-align: center;\n      width: 1200px; }\n  .links {\n    display: flex;\n    max-width: 1200px;\n    flex-direction: row;\n    justify-content: center; }\n    .links li {\n      list-style: none;\n      font-size: 20px;\n      flex-grow: 1;\n      text-align: center; }\n      .links li .indexLink {\n        text-decoration: none;\n        color: black; }\n  body {\n    max-width: 1200px;\n    background-image: url(" + escape(__webpack_require__(104)) + ");\n    background-repeat: no-repeat;\n    background-size: cover; }\n  .paragraph {\n    margin-top: 70px;\n    max-width: 1400px;\n    margin-left: 80px; }\n    .paragraph .header {\n      display: flex;\n      justify-content: center;\n      font-size: 16px; }\n    .paragraph .profil {\n      text-align: center;\n      display: flex;\n      justify-content: center; }\n  .codersLab {\n    display: flex;\n    margin-left: 190px; }\n    .codersLab .codersImg {\n      margin-top: 10px;\n      margin-right: 20px;\n      width: 80px;\n      height: 80px; }\n    .codersLab .date {\n      font-size: 14px;\n      display: flex;\n      margin-top: 50px;\n      margin-right: 30px; }\n    .codersLab .study {\n      display: flex;\n      margin-top: 30px; }\n  .educationSection {\n    display: flex;\n    margin-left: 200px; }\n    .educationSection .aghImg {\n      margin-right: 30px;\n      width: 60px;\n      height: 100px; }\n    .educationSection .date {\n      font-size: 14px;\n      display: flex;\n      margin-top: 50px;\n      margin-right: 30px; }\n    .educationSection .study {\n      display: flex;\n      margin-top: 30px; }\n  .toolsBox {\n    display: flex;\n    flex-direction: row; }\n    .toolsBox .toolsImg {\n      width: 80px;\n      height: 80px;\n      margin: 20px;\n      margin-top: 50px; }\n  .interestBox {\n    display: flex;\n    margin-left: 200px;\n    flex-direction: row; }\n    .interestBox .interestImg {\n      width: 80px;\n      height: 80px;\n      margin: 20px;\n      margin-top: 50px; }\n  .images {\n    width: 200px;\n    height: 200px; }\n  .projects {\n    display: flex;\n    flex-direction: column;\n    text-align: center;\n    margin-top: 100px;\n    font-size: 20px; }\n    .projects a {\n      color: black;\n      text-decoration: none;\n      margin: 50px 0; }\n    .projects .projectsImg {\n      width: 300px;\n      height: 200px;\n      justify-content: center;\n      margin-left: 450px;\n      opacity: 0.7; }\n  .boxContact {\n    display: flex; }\n    .boxContact .imgContact {\n      width: 150px;\n      height: 150px;\n      flex-direction: row;\n      margin-top: 200px;\n      margin-left: 90px;\n      position: relative; }\n    .boxContact p {\n      font-size: 18px;\n      display: block;\n      position: absolute;\n      top: 420px;\n      width: 310px;\n      text-align: center; } }\n", ""]);
 
 // exports
 

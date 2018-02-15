@@ -18,15 +18,37 @@ document.addEventListener('DOMContentLoaded',function() {
         }
     }
     class Home extends React.Component{
+        state={
+            loader:true
+        };
+        componentDidMount(){
+            this.timeout=setTimeout(()=>{
+                this.setState({
+                    loader:false
+                })
+            },4000)
+        }
+        componentWillUnmount(){
+            clearTimeout(this.timeout)
+        }
         render(){
-            return (
-                <div>
-                    <Menu/>
-                    <div className='homePage'>
-                        <h1 className='home'>Witam!</h1>
+            if (this.state.loader){
+                return(
+                    <div id="preloader">
+                        <div id="loader"/>
                     </div>
-                </div>
-            )
+                )
+            }else{
+                return (
+                    <div>
+                        <Menu/>
+                        <div className='homePage'>
+                            <h1 className='home'>Witam!</h1>
+                        </div>
+                    </div>
+                )
+            }
+
         }
     }
     class AboutMe extends React.Component{
